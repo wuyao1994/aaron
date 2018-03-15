@@ -1,5 +1,5 @@
 import lodash from 'lodash'
-
+import config from './config'
 /**
  * 数组内查询
  * @param array
@@ -41,4 +41,5 @@ const arryaToTree = (array, id = 'id', bpid = 'bpid', children = 'children') => 
 module.exports = {
   queryArray,
   arryaToTree,
+  config,
 }

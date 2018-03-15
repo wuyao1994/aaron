@@ -1,3 +1,5 @@
-/**
- * Created by elvis on 2018/3/14.
- */
+import Loader from './Loader'
+
+module.exports = {
+  Loader,
+}
