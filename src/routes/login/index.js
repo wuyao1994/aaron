@@ -1,3 +1,6 @@
-/**
- * Created by elvis on 2018/3/14.
- */
+import { connect } from 'dva'
+const Login = ({loading, dispatch}) => {
+  return (<div>123</div>)
+}
+
+export default connect(({loading}) => ({loading}))(Login)

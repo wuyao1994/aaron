@@ -5,7 +5,6 @@ import dynamic from 'dva/dynamic'
 import App from 'routes/app'
 import {LocaleProvider} from 'antd'
 import enUS from 'antd/lib/locale-provider/en_US'
-import Switch from "antd/lib/switch/index.d";
 
 const { ConnectedRouter } = routerRedux
 
@@ -17,7 +16,7 @@ const Routers  = function ({history, app}) {
   const routes = [
     {
       path: '/dashboard',
-      models: () => [import('./modsls/dashboard')],
+      models: () => [import('./models/dashboard')],
       component: () => import('./routes/dashboard/'),
     }, {
       path: '/login',
@@ -52,3 +51,10 @@ const Routers  = function ({history, app}) {
     </ConnectedRouter>
   )
 }
+
+Routers.propTypes = {
+  history: PropTypes.object,
+  app: PropTypes.object,
+}
+
+export default Routers

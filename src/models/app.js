@@ -7,9 +7,9 @@ export default {
   namespace: 'app',
   state: {
     user: {},
-    locationPathname,
+    locationPathname: '',
   },
-  subscription: {
+  subscriptions: {
 
     setup ({ dispatch}) {
       dispatch({ type: 'query'})
