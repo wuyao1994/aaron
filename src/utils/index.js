@@ -1,5 +1,6 @@
 import lodash from 'lodash'
 import config from './config'
+import request from './request'
 
 /**
  * 数组内查询
@@ -43,4 +44,5 @@ module.exports = {
   queryArray,
   arryaToTree,
   config,
+  request,
 }
