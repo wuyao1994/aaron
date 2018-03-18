@@ -34,7 +34,7 @@ const adminUsers = [
 module.exports = {
   [`POST ${apiPrefix}/user/login`] (req, res) {
     const { username, password } = req.body
-    const user = adminUsers.filter(_ => _.username === username)
+    const user = adminUsers.filter(item => item.username === username)
 
     if (user.length > 0 && user[0].password === password) {
       const now = new Date()
@@ -43,6 +43,7 @@ module.exports = {
         maxAge: 900000,
         httpOnly: true,
       })
+      res.json({ success: true, message: 'Ok'})
     } else {
       res.status(400).end()
     }

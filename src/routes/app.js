@@ -20,7 +20,7 @@ const App = ({children, dispatch, app, loading, location}) => {
     )
   }
 
-  return (<div>app</div>)
+  return (<div>{children}</div>)
 }
 
 App.propTypes = {
