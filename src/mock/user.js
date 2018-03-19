@@ -52,7 +52,7 @@ module.exports = {
   [`GET ${apiPrefix}/user`] (req, res) {
     const cookie = req.header.cookie || ''
     const cookies = qs.parse(cookie.replace(/\s/g, ''), {delimiter: ';'})
-    const respose = {}
+    const response = {}
     const user = {}
     if (!cookies.token) {
       res.status(200).send({ message: 'Not Login'})
@@ -60,18 +60,18 @@ module.exports = {
     }
     const token = JSON.parse(cookies.token);
     if (token) {
-      respose.success = token.deadline > new Date().getTime()
+      response.success = token.deadline > new Date().getTime()
 
     }
-    if (respose.success) {
+    if (response.success) {
       const userItem = adminUsers.filter(_ => _.id === token.id)
       if (userItem.length > 0) {
-        user.permission = userItem.permission
+        user.permissions = userItem.permission
         user.username = userItem.username
         user.id = userItem.id
       }
     }
-    respose.user = user
-    res.json(respose)
+    response.user = user
+    res.json(response)
   },
 }
