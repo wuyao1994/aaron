@@ -32,7 +32,14 @@ export default {
       const { success, user } = yield call(query, payload)
       const { locationPathname } = yield select( _ => _.app)
       if ( success && user) {
-        console.log('login success!')
+        const { permissions } = user.permissions
+        yield put({
+          type: 'updateState',
+          payload:{
+            user,
+            permissions,
+          }
+        })
       } else if (config.openPages && config.openPages.indexOf(locationPathname) < 0) {
         yield put(routerRedux.push({
           pathname: '/login',

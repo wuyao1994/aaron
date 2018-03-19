@@ -50,7 +50,7 @@ module.exports = {
   },
 
   [`GET ${apiPrefix}/user`] (req, res) {
-    const cookie = req.header.cookie || ''
+    const cookie = req.headers.cookie || ''
     const cookies = qs.parse(cookie.replace(/\s/g, ''), {delimiter: ';'})
     const response = {}
     const user = {}
@@ -66,9 +66,9 @@ module.exports = {
     if (response.success) {
       const userItem = adminUsers.filter(_ => _.id === token.id)
       if (userItem.length > 0) {
-        user.permissions = userItem.permission
-        user.username = userItem.username
-        user.id = userItem.id
+        user.permissions = userItem[0].permissions
+        user.username = userItem[0].username
+        user.id = userItem[0].id
       }
     }
     response.user = user
