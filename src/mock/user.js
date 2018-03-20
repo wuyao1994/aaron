@@ -61,7 +61,6 @@ module.exports = {
     const token = JSON.parse(cookies.token);
     if (token) {
       response.success = token.deadline > new Date().getTime()
-
     }
     if (response.success) {
       const userItem = adminUsers.filter(_ => _.id === token.id)

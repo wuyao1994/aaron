@@ -40,6 +40,11 @@ export default {
             permissions,
           }
         })
+        if (location.pathname === '/login') {
+          yield put(routerRedux.push({
+            pathname: '/dashboard',
+          }))
+        }
       } else if (config.openPages && config.openPages.indexOf(locationPathname) < 0) {
         yield put(routerRedux.push({
           pathname: '/login',
