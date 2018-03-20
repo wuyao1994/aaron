@@ -5,13 +5,34 @@ import { withRouter } from 'dva/router'
 import { connect } from 'dva'
 import { Spin, Layout } from 'antd'
 import styles from './app.less'
-const { Header, Footer, Sider, Content } = Layout;
+import { MyLayout } from '../components'
+import { Helmet } from 'react-helmet'
+
+const { Header, Bread}  = MyLayout
+const { Footer, Sider, Content } = Layout;
 
 const { openPages } = config
 const App = ({children, dispatch, app, loading, location}) => {
   const { user, menu, permissions } = app
   let { pathname } = location
   pathname = pathname.startsWith('/') ? pathname : `/${pathname}`
+
+  const headerProps = {
+    menu,
+    user,
+    location,
+  }
+
+  const siderProps = {
+    menu,
+    location,
+  }
+
+  const breadProps = {
+    menu,
+    location,
+  }
+
   if (openPages && openPages.includes(pathname)) {
     return (
       <div>
@@ -24,12 +45,21 @@ const App = ({children, dispatch, app, loading, location}) => {
   return (
     <div>
       <Spin size="large" className={styles.spin} spinning={loading.effects['app/query']}/>
+      <Helmet>
+        <title>aaron</title>
+      </Helmet>
+
       <Layout>
-        <Sider>Sider</Sider>
+        <Sider trigger={null}>
+          <MyLayout.Sider {...siderProps}/>
+        </Sider>
         <Layout>
-          <Header>Header</Header>
-          <Content>{children}</Content>
-          <Footer>Footer</Footer>
+          <Header>{...headerProps}</Header>
+          <Content>
+            <Bread {...breadProps}/>
+            {children}
+            </Content>
+          <Footer>{config.footerText}</Footer>
         </Layout>
       </Layout>
     </div>)
