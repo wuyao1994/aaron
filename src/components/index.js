@@ -1,5 +1,5 @@
-import Loader from './Loader'
+import * as MyLayout from './Layout/index'
 
-module.exports = {
-  Loader,
+export {
+  MyLayout,
 }

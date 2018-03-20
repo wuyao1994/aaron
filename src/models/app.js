@@ -1,12 +1,17 @@
 import config  from '../utils/config'
 import { query } from '../services/app'
+import * as menuService from '../services/menus'
 import { routerRedux } from 'dva/router'
 import queryString from 'query-string'
-
+import enumRoleType from '../utils/enums'
 export default {
   namespace: 'app',
   state: {
     user: {},
+    permissions:{
+      visit:[],
+    },
+    menu:[],
     locationPathname: '',
   },
   subscriptions: {
@@ -32,12 +37,21 @@ export default {
       const { success, user } = yield call(query, payload)
       const { locationPathname } = yield select( _ => _.app)
       if ( success && user) {
-        const { permissions } = user.permissions
+        const { list } = yield call(menuService.query)
+        let menu = []
+        const { permissions } = user
+        if (permissions.role === enumRoleType.ADMIN) {
+          permissions.visit = list.map(item => item.id)
+          menu = list
+        } else {
+
+        }
         yield put({
           type: 'updateState',
           payload:{
             user,
             permissions,
+            menu,
           }
         })
         if (location.pathname === '/login') {

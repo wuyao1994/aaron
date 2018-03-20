@@ -9,9 +9,7 @@ const { Header, Footer, Sider, Content } = Layout;
 
 const { openPages } = config
 const App = ({children, dispatch, app, loading, location}) => {
-  const {
-    user, menu, permissions
-  } = app
+  const { user, menu, permissions } = app
   let { pathname } = location
   pathname = pathname.startsWith('/') ? pathname : `/${pathname}`
   if (openPages && openPages.includes(pathname)) {
