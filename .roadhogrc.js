@@ -2,7 +2,7 @@ const { version } = require('./package.json')
 
 export default {
   entry: 'src/index.js',
-  // theme: "./theme.config.js",
+  theme: "./theme.config.js",
   publicPath: `/${version}/`,
   outputPath: `./dist/${version}`,
   // 接口代理示例

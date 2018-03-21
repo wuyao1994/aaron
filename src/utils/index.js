@@ -20,17 +20,17 @@ const queryArray = (array, key, keyAlias = 'key') => {
   return null
 }
 
-const arryaToTree = (array, id = 'id', bpid = 'bpid', children = 'children') => {
+const arrayToTree = (array, id = 'id', bpid = 'bpid', children = 'children') => {
   let data = lodash.cloneDeep(array)
   let result = []
   let hash = {}
-  data.forEach((index) => {
+  data.forEach((item, index) => {
     hash[data[index][id]] = data[index]
   })
   data.forEach((item) => {
     let hashVP = hash[item[bpid]]
     if (hashVP) {
-      !(hashVP[children]) && (hashVP[children] = {})
+      !(hashVP[children]) && (hashVP[children] = [])
       hashVP[children].push(item)
     } else {
       result.push(item)
@@ -42,7 +42,7 @@ const arryaToTree = (array, id = 'id', bpid = 'bpid', children = 'children') => 
 
 module.exports = {
   queryArray,
-  arryaToTree,
+  arrayToTree,
   config,
   request,
 }

@@ -56,7 +56,7 @@ const App = ({
           <MyLayout.Sider {...siderProps} />
         </Sider>
         <Layout>
-          <Header>{...headerProps}</Header>
+          <Header {...headerProps} />
           <Content>
             <Bread {...breadProps} />
             {children}

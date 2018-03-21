@@ -38,10 +38,11 @@ export default {
       const { locationPathname } = yield select(_ => _.app)
       if (success && user) {
         const { list } = yield call(menuService.query)
-        let menu = []
+        let menu = list
         const { permissions } = user
         if (permissions.role === enumRoleType.ADMIN) {
           permissions.visit = list.map(item => item.id)
+        } else {
           menu = list
         }
 
