@@ -23,6 +23,11 @@ const App = ({
     menu,
     user,
     location,
+    logout () {
+      dispatch({
+        type: 'app/logout',
+      })
+    },
   }
 
   const siderProps = {

@@ -19,7 +19,7 @@ const userPermission = {
   },
   DEVELOPER: {
     role: enumRoleType.DEVELOPER,
-  }
+  },
 }
 
 const adminUsers = [
@@ -48,10 +48,9 @@ module.exports = {
       res.status(400).end()
     }
   },
-
   [`GET ${apiPrefix}/user`] (req, res) {
     const cookie = req.headers.cookie || ''
-    const cookies = qs.parse(cookie.replace(/\s/g, ''), {delimiter: ';'})
+    const cookies = qs.parse(cookie.replace(/\s/g, ''), { delimiter: ';'})
     const response = {}
     const user = {}
     if (!cookies.token) {
@@ -73,4 +72,8 @@ module.exports = {
     response.user = user
     res.json(response)
   },
+  [`GET ${apiPrefix}/user/logout`] (req, res) {
+    res.clearCookie('token')
+    res.status(200).end()
+  }
 }

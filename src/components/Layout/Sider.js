@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { config } from '../../utils'
 import Menus from './Menu'
+import styles from './Layout.less'
 
 const Sider = ({
   menu, location,
@@ -12,7 +13,7 @@ const Sider = ({
   }
   return (
     <div>
-      <div>
+      <div className={styles.logo}>
         <span>{config.name}</span>
       </div>
       <Menus {...menusProps} />

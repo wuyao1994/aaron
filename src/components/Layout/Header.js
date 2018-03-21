@@ -1,16 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Menu, Icon, Layout, Popover } from 'antd'
+import styles from './Header.less'
 
 const { SubMenu } = Menu
 const Header = ({
-  user, menu,
+  user, menu, logout,
 }) => {
+  let handleClickMneu = _ => _.key === 'logout' && logout()
   return (
     <Layout.Header>
       <div>
-        <Menu mode="horizontal">
-          <SubMenu title={<span><Icon type="user" />{user.name}</span>}>
+        <Menu mode="horizontal" onClick={handleClickMneu}>
+          <SubMenu
+            style={{
+              float: 'right',
+            }}
+            title={<span><Icon type="user" />{user.name}</span>}>
             <Menu.Item key="logout">
               Sign out
             </Menu.Item>
@@ -24,5 +30,6 @@ const Header = ({
 Header.propTypes = {
   user: PropTypes.object,
   menu: PropTypes.array,
+  logout: PropTypes.fun,
 }
 export default Header

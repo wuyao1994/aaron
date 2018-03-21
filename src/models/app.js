@@ -1,7 +1,7 @@
 import { routerRedux } from 'dva/router'
 import queryString from 'query-string'
 import config from '../utils/config'
-import { query } from '../services/app'
+import { query, logout } from '../services/app'
 import * as menuService from '../services/menus'
 import enumRoleType from '../utils/enums'
 
@@ -66,6 +66,14 @@ export default {
             from: locationPathname,
           }),
         }))
+      }
+    },
+    * logout ({ payload }, { call, put }) {
+      const data = yield call(logout, payload)
+      if (data.success) {
+        yield put({ type: 'query' })
+      } else {
+        throw (data)
       }
     },
   },

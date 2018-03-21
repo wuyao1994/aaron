@@ -36,7 +36,7 @@ const Menus = ({
   const menuItems = getMenus(menuTree)
 
   return (
-    <Menu>
+    <Menu mode="inline">
       {menuItems}
     </Menu>
   )
