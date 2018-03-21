@@ -3,7 +3,7 @@ import lodash from 'lodash'
 import pathToRegexp from 'path-to-regexp'
 import { message } from 'antd'
 
-const fetch  = (options) => {
+const fetch = (options) => {
   let {
     method = 'get',
     data,
@@ -13,14 +13,14 @@ const fetch  = (options) => {
   const clonedata = lodash.cloneDeep(data)
 
   try {
-    let domin = ''
+    let domain = ''
     if (url.match(/[a-zA-Z]+:\/\/[^/]*/)) {
       [domain] = url.match(/[a-zA-Z]+:\/\/[^/]*/)
-      url = url.slice(domin.length)
+      url = url.slice(domain.length)
     }
     const match = pathToRegexp.parse(url)
     url = pathToRegexp.compile(url)(data)
-    url = domin + url
+    url = domain + url
   } catch (e) {
     message.error(e.message)
   }
@@ -30,7 +30,7 @@ const fetch  = (options) => {
       return axios.get(
         url,
         {
-          params:clonedata,
+          params: clonedata,
         }
       )
     case 'post':
@@ -42,8 +42,7 @@ const fetch  = (options) => {
       return axios.delete(
         url,
         {
-          data: clonedata
-
+          data: clonedata,
         },
       )
     case 'put':

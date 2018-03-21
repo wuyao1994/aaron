@@ -17,12 +17,7 @@ module.exports = (webpackConfig, env) => {
         return item
       })
     }
-    webpackConfig.plugins.push(
-      new webpack.LoaderOptionsPlugin({
-        minimize: true,
-        debug: false,
-      })
-    )
+    webpackConfig.plugins.push(new webpack.LoaderOptionsPlugin({ minimize: true, debug: false }))
   }
 
   webpackConfig.plugins = webpackConfig.plugins.concat([

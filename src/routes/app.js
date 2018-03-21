@@ -1,18 +1,20 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { config } from '../utils'
 import { withRouter } from 'dva/router'
 import { connect } from 'dva'
 import { Spin, Layout } from 'antd'
+import { Helmet } from 'react-helmet'
+import React from 'react'
+import PropTypes from 'prop-types'
+import { config } from '../utils'
 import styles from './app.less'
 import { MyLayout } from '../components'
-import { Helmet } from 'react-helmet'
 
-const { Header, Bread}  = MyLayout
-const { Footer, Sider, Content } = Layout;
+const { Header, Bread } = MyLayout
+const { Footer, Sider, Content } = Layout
 
 const { openPages } = config
-const App = ({children, dispatch, app, loading, location}) => {
+const App = ({
+  children, dispatch, app, loading, location,
+}) => {
   const { user, menu, permissions } = app
   let { pathname } = location
   pathname = pathname.startsWith('/') ? pathname : `/${pathname}`
@@ -36,7 +38,7 @@ const App = ({children, dispatch, app, loading, location}) => {
   if (openPages && openPages.includes(pathname)) {
     return (
       <div>
-        <Spin size="large" className={styles.spin} spinning={loading.effects['app/query']}/>
+        <Spin size="large" className={styles.spin} spinning={loading.effects['app/query']} />
         {children}
       </div>
     )
@@ -44,21 +46,21 @@ const App = ({children, dispatch, app, loading, location}) => {
 
   return (
     <div>
-      <Spin size="large" className={styles.spin} spinning={loading.effects['app/query']}/>
+      <Spin size="large" className={styles.spin} spinning={loading.effects['app/query']} />
       <Helmet>
         <title>aaron</title>
       </Helmet>
 
       <Layout>
         <Sider trigger={null}>
-          <MyLayout.Sider {...siderProps}/>
+          <MyLayout.Sider {...siderProps} />
         </Sider>
         <Layout>
           <Header>{...headerProps}</Header>
           <Content>
-            <Bread {...breadProps}/>
+            <Bread {...breadProps} />
             {children}
-            </Content>
+          </Content>
           <Footer>{config.footerText}</Footer>
         </Layout>
       </Layout>
@@ -73,5 +75,4 @@ App.propTypes = {
   location: PropTypes.object,
 }
 
-export default withRouter(connect(({app, loading}) => ({app, loading}))(App))
-
+export default withRouter(connect(({ app, loading }) => ({ app, loading }))(App))

@@ -1,25 +1,25 @@
-import config  from '../utils/config'
-import { query } from '../services/app'
-import * as menuService from '../services/menus'
 import { routerRedux } from 'dva/router'
 import queryString from 'query-string'
+import config from '../utils/config'
+import { query } from '../services/app'
+import * as menuService from '../services/menus'
 import enumRoleType from '../utils/enums'
+
 export default {
   namespace: 'app',
   state: {
     user: {},
-    permissions:{
-      visit:[],
+    permissions: {
+      visit: [],
     },
-    menu:[],
+    menu: [],
     locationPathname: '',
   },
   subscriptions: {
 
-    setup ({ dispatch}) {
-      dispatch({ type: 'query'})
+    setup ({ dispatch }) {
+      dispatch({ type: 'query' })
     },
-
     setupHistory ({ dispatch, history }) {
       history.listen((location) => {
         dispatch({
@@ -33,28 +33,27 @@ export default {
     },
   },
   effects: {
-    * query ({ payload}, {call, put, select}) {
+    * query ({ payload }, { call, put, select }) {
       const { success, user } = yield call(query, payload)
-      const { locationPathname } = yield select( _ => _.app)
-      if ( success && user) {
+      const { locationPathname } = yield select(_ => _.app)
+      if (success && user) {
         const { list } = yield call(menuService.query)
         let menu = []
         const { permissions } = user
         if (permissions.role === enumRoleType.ADMIN) {
           permissions.visit = list.map(item => item.id)
           menu = list
-        } else {
-
         }
+
         yield put({
           type: 'updateState',
-          payload:{
+          payload: {
             user,
             permissions,
             menu,
-          }
+          },
         })
-        if (location.pathname === '/login') {
+        if (locationPathname === '/login') {
           yield put(routerRedux.push({
             pathname: '/dashboard',
           }))
@@ -64,10 +63,10 @@ export default {
           pathname: '/login',
           search: queryString.stringify({
             from: locationPathname,
-          })
+          }),
         }))
       }
-    }
+    },
   },
   reducers: {
     updateState (state, { payload }) {
@@ -75,6 +74,6 @@ export default {
         ...state,
         ...payload,
       }
-    }
-  }
+    },
+  },
 }

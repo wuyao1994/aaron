@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'dva'
-import { Form, Icon, Input, Button, Checkbox } from 'antd';
+import { Form, Icon, Input, Button, Checkbox } from 'antd'
 import styles from './index.less'
 
 const FormItem = Form.Item
@@ -12,19 +12,18 @@ const Login = ({
   form: {
     getFieldDecorator,
     validateFieldsAndScroll,
-  }
+  },
 }) => {
-  function handleSubmit() {
+  function handleSubmit () {
     validateFieldsAndScroll((err, values) => {
       if (err) {
-        console.log('login error');
         return
       }
       dispatch({
         type: 'login/login',
         payload: values,
       })
-    });
+    })
   }
 
   return (
@@ -36,24 +35,18 @@ const Login = ({
         <FormItem>
           {getFieldDecorator('username', {
             rules: [{ required: true, message: 'Please input your username!' }],
-          })(
-            <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />
-          )}
+          })(<Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" />)}
         </FormItem>
         <FormItem>
           {getFieldDecorator('password', {
             rules: [{ required: true, message: 'Please input your Password!' }],
-          })(
-            <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />
-          )}
+          })(<Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" />)}
         </FormItem>
         <FormItem>
           {getFieldDecorator('remember', {
             valuePropName: 'checked',
             initialValue: true,
-          })(
-            <Checkbox>Remember me</Checkbox>
-          )}
+          })(<Checkbox>Remember me</Checkbox>)}
           <a className={styles.forget} href="">Forgot password</a>
           <Button type="primary" onClick={handleSubmit} htmlType="submit" className={styles.button} loading={loading.effects['login/login']}>
             Log in
@@ -70,4 +63,4 @@ Login.propTypes = {
   form: PropTypes.object,
 }
 
-export default connect(({loading}) => ({loading}))(Form.create()(Login))
+export default connect(({ loading }) => ({ loading }))(Form.create()(Login))
