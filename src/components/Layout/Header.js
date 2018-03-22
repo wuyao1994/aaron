@@ -9,7 +9,7 @@ const Header = ({
 }) => {
   let handleClickMneu = _ => _.key === 'logout' && logout()
   return (
-    <Layout.Header>
+    <Layout.Header className={styles.header}>
       <div>
         <Menu mode="horizontal" onClick={handleClickMneu}>
           <SubMenu
@@ -30,6 +30,6 @@ const Header = ({
 Header.propTypes = {
   user: PropTypes.object,
   menu: PropTypes.array,
-  logout: PropTypes.fun,
+  logout: PropTypes.func,
 }
 export default Header

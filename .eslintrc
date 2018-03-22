@@ -1,29 +1,54 @@
+//rules：开启规则和发生错误时报告的等级
+//规则的错误等级有三种：
+//0或'off'：关闭规则。
+//1或'warn'：打开规则，并且作为一个警告（并不会导致检查不通过）。
+//2或'error'：打开规则，并且作为一个错误 (退出码为1，检查不通过)。
 {
   "extends": "airbnb",
   "rules": {
+    //要求箭头函数体使用大括号
     "arrow-body-style": [0, "never"],
+    //数组和对象键值对最后一个逗号， never参数：不能带末尾的逗号, always参数：必须带末尾的逗号，
+    //always-multiline：多行模式必须带逗号，单行模式不能带逗号
     "comma-dangle": [2, "always-multiline"],
+    //require() 出现在顶层模块作用域中
     "global-require": 0,
+    //强制使用命名的 function 表达式
     "func-names": 0,
+    // 要求使用 const 声明那些声明后不再被修改的变量
     "prefer-const": 0,
     "import/no-unresolved": 0,
     "import/extensions": 0,
+    // 强制一行的最大长度
     "max-len": 0,
+    // 禁止出现未使用过的表达式
     "no-unused-expressions": [0, {
       "allowShortCircuit": true,
       "allowTernary": true
     }],
+    // 禁用 console
     "no-console": 0,
+    // 禁止扩展原生类型
     "no-extend-native": 0,
+    // 不允许对 function 的参数进行重新赋值
     "no-param-reassign": 0,
+    // 禁止使用特定的语法
     "no-restricted-syntax": 0,
+    // 禁用 eval()
     "no-eval": 0,
+    // 禁用 continue 语句
     "no-continue": 0,
+    // 禁止混合使用不同的操作符
     "no-mixed-operators": 0,
+    // 禁止使用一元操作符 ++ 和 --
     "no-plusplus": 0,
+    // 禁止出现未使用过的变量
     "no-unused-vars": [2, { "ignoreRestSiblings": true }],
+    // 禁止标识符中有悬空下划线_bar
     "no-underscore-dangle": 0,
+    // 强制在 function的左括号之前使用一致的空格
     "space-before-function-paren": [2, "always"],
+    // 要求或禁止使用分号而不是 ASI（这个才是控制行尾部分号的，）
     "semi": [2, "never"],
     "import/no-extraneous-dependencies": 0,
     "import/prefer-default-export": 0,
@@ -44,6 +69,7 @@
     "react/no-danger": 0,
     "react/jsx-first-prop-new-line": 0,
     "react/jsx-filename-extension": 0,
+    // 强制使用一致的换行风格
     "linebreak-style": 0
   },
   "parser": "babel-eslint",
