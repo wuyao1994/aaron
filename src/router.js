@@ -22,7 +22,11 @@ const Routers  = function ({history, app}) {
       path: '/login',
       models: () => [import('./models/login')],
       component: () => import('./routes/login'),
-    }
+    },
+    {
+      path: '/chart/Echarts',
+      component: () => import('./routes/charts/Echarts/'),
+    },
   ]
 
   return (
@@ -32,19 +36,18 @@ const Routers  = function ({history, app}) {
           <Switch>
             <Route exact path="/" render={() => (<Redirect to="/dashboard" />)}/>
             {
-              routes.map(({path, ...dynamics}, key) => (
-                  <Route key={key}
-                    exact
-                    path={path}
-                    component={dynamic({
-                      app,
-                      ...dynamics,
-                    })}
-                  />
-                )
-              )
+              routes.map(({ path, ...dynamics }, key) => (
+                <Route key={key}
+                  exact
+                  path={path}
+                  component={dynamic({
+                    app,
+                    ...dynamics,
+                  })}
+                />
+                ))
             }
-            <Route component={error}/>
+            <Route component={error} />
           </Switch>
         </App>
       </LocaleProvider>
