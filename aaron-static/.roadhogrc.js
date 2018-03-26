@@ -8,9 +8,9 @@ export default {
   // 接口代理示例
   proxy: {
     "/api/v1/weather": {
-      "target": "https://api.seniverse.com/",
+      "target": "http://localhost:7000/",
       "changeOrigin": true,
-      "pathRewrite": { "^/api/v1/weather": "/v3/weather" }
+      "pathRewrite": { "^/api/v1": "" }
     },
   },
   env: {
