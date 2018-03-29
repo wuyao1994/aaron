@@ -3,8 +3,11 @@ package com.awesome.mapper;
 import com.awesome.model.SysPermission;
 import com.awesome.model.SysPermissionExample;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface SysPermissionMapper {
     long countByExample(SysPermissionExample example);
 

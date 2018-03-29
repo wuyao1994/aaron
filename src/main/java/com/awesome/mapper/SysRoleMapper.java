@@ -3,8 +3,11 @@ package com.awesome.mapper;
 import com.awesome.model.SysRole;
 import com.awesome.model.SysRoleExample;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface SysRoleMapper {
     long countByExample(SysRoleExample example);
 

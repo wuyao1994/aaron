@@ -3,8 +3,11 @@ package com.awesome.mapper;
 import com.awesome.model.SysMenu;
 import com.awesome.model.SysMenuExample;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface SysMenuMapper {
     long countByExample(SysMenuExample example);
 

@@ -3,8 +3,11 @@ package com.awesome.mapper;
 import com.awesome.model.SysAccount;
 import com.awesome.model.SysAccountExample;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface SysAccountMapper {
     long countByExample(SysAccountExample example);
 
