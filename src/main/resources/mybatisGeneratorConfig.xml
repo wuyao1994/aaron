@@ -82,27 +82,27 @@
             <columnOverride column="UPDATE_TIME" jdbcType="TIMESTAMP" />
             <!--默认是Date类型(年月日)，如果需要时间戳类型需要自定义-->
         </table>
-        <!--<table tableName="sys_account_role"-->
-               <!--enableInsert="true"-->
-               <!--enableCountByExample="true"-->
-               <!--enableDeleteByExample="true" enableDeleteByPrimaryKey="true"-->
-               <!--enableUpdateByExample="true" enableUpdateByPrimaryKey="true"-->
-               <!--enableSelectByExample="true" enableSelectByPrimaryKey="true">-->
-            <!--&lt;!&ndash;<generatedKey column="id" sqlStatement="select sys_role_seq.nextval from dual"/>&ndash;&gt;-->
-            <!--<columnOverride column="CREATE_TIME" jdbcType="TIMESTAMP" />-->
-            <!--<columnOverride column="UPDATE_TIME" jdbcType="TIMESTAMP" />-->
-            <!--&lt;!&ndash;默认是Date类型(年月日)，如果需要时间戳类型需要自定义&ndash;&gt;-->
-        <!--</table>-->
-        <!--<table tableName="sys_role_permission"-->
-               <!--enableInsert="true"-->
-               <!--enableCountByExample="true"-->
-               <!--enableDeleteByExample="true" enableDeleteByPrimaryKey="true"-->
-               <!--enableUpdateByExample="true" enableUpdateByPrimaryKey="true"-->
-               <!--enableSelectByExample="true" enableSelectByPrimaryKey="true">-->
-            <!--&lt;!&ndash;<generatedKey column="id" sqlStatement="select sys_role_seq.nextval from dual"/>&ndash;&gt;-->
-            <!--<columnOverride column="CREATE_TIME" jdbcType="TIMESTAMP" />-->
-            <!--<columnOverride column="UPDATE_TIME" jdbcType="TIMESTAMP" />-->
-            <!--&lt;!&ndash;默认是Date类型(年月日)，如果需要时间戳类型需要自定义&ndash;&gt;-->
-        <!--</table>-->
+        <table tableName="sys_account_role"
+               enableInsert="true"
+               enableCountByExample="true"
+               enableDeleteByExample="true" enableDeleteByPrimaryKey="true"
+               enableUpdateByExample="true" enableUpdateByPrimaryKey="true"
+               enableSelectByExample="true" enableSelectByPrimaryKey="true">
+            <!--<generatedKey column="id" sqlStatement="select sys_role_seq.nextval from dual"/>-->
+            <columnOverride column="CREATE_TIME" jdbcType="TIMESTAMP" />
+            <columnOverride column="UPDATE_TIME" jdbcType="TIMESTAMP" />
+            <!--默认是Date类型(年月日)，如果需要时间戳类型需要自定义-->
+        </table>
+        <table tableName="sys_role_permission"
+               enableInsert="true"
+               enableCountByExample="true"
+               enableDeleteByExample="true" enableDeleteByPrimaryKey="true"
+               enableUpdateByExample="true" enableUpdateByPrimaryKey="true"
+               enableSelectByExample="true" enableSelectByPrimaryKey="true">
+            <!--<generatedKey column="id" sqlStatement="select sys_role_seq.nextval from dual"/>-->
+            <columnOverride column="CREATE_TIME" jdbcType="TIMESTAMP" />
+            <columnOverride column="UPDATE_TIME" jdbcType="TIMESTAMP" />
+            <!--默认是Date类型(年月日)，如果需要时间戳类型需要自定义-->
+        </table>
     </context>
 </generatorConfiguration>
