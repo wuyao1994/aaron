@@ -15,7 +15,7 @@
         </commentGenerator>
 
         <!--  Database Configurations  -->
-        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/aas_db" userId="root" password="password" />
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://localhost:3306/aaron" userId="root" password="password" />
 
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false" />
