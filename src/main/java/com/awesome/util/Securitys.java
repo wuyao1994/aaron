@@ -1,10 +1,11 @@
 package com.awesome.util;
 
-import com.awesome.model.Menu;
-import com.awesome.model.ShiroUser;
+import java.util.List;
+
 import org.apache.shiro.SecurityUtils;
 
-import java.util.List;
+import com.awesome.model.Menu;
+import com.awesome.model.ShiroUser;
 
 public class Securitys extends SecurityUtils {
 	public static ShiroUser getUser() {
@@ -42,6 +43,6 @@ public class Securitys extends SecurityUtils {
 
 
 	public static boolean isAdmin() {
-		return getUser().getAdmin();
+		return getUser().isAdmin();
 	}
 }

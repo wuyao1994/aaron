@@ -7,7 +7,7 @@ public class ShiroUser implements Serializable {
 	private String					accountId;
 	private String					loginName;
 	private String					name;
-	private Boolean					isAdmin;
+	private boolean					isAdmin;
 	private transient List<String>	roleIdList;
 	private transient List<Menu>	menus;
 	private transient List<String>	roles;
@@ -50,15 +50,20 @@ public class ShiroUser implements Serializable {
 	}
 
 
-    public Boolean getAdmin() {
-        return isAdmin;
-    }
 
-    public void setAdmin(Boolean admin) {
-        isAdmin = admin;
-    }
+	public boolean isAdmin() {
+		return isAdmin;
+	}
 
-    public List<String> getRoleIdList() {
+
+
+	public void setAdmin(boolean pAdmin) {
+		isAdmin = pAdmin;
+	}
+
+
+
+	public List<String> getRoleIdList() {
 		return roleIdList;
 	}
 
