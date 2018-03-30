@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+import com.awesome.util.Securitys;
+import com.google.common.collect.Maps;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.springframework.beans.BeanUtils;
@@ -119,6 +121,12 @@ public class AccountService {
 
 
 	public Map<String, Object> getUser() {
-		return null;
+		Map<String, Object> res = Maps.newHashMap();
+		res.put("user", User.buildUser());
+		if (Securitys.isAuthenticatedOrRemembered() && Securitys.getMenus() == null) {
+		    setShiroUserExtraInfo(Securitys.getUser());
+        }
+        res.put("menu", Securitys.getMenus());
+	    return res;
 	}
 }
