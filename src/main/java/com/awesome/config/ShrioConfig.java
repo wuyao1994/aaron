@@ -15,6 +15,7 @@ import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.servlet.SimpleCookie;
 import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 
 import com.awesome.shiro.realm.ShiroRealm;
@@ -23,6 +24,7 @@ import javax.servlet.Filter;
 import java.util.HashMap;
 import java.util.Map;
 
+@Configuration
 public class ShrioConfig {
 	/**
 	 * 实现了Initializable或者Destroyable的shiro对象将会自动调用init() and/or destory()方法
@@ -94,7 +96,7 @@ public class ShrioConfig {
 		return securityManager;
 	}
 
-	@Bean
+	@Bean(name = "shiroFilter")
     public ShiroFilterFactoryBean shiroFilter() {
 	    ShiroFilterFactoryBean shiroFilter = new ShiroFilterFactoryBean();
 	    shiroFilter.setLoginUrl("/user/login");
