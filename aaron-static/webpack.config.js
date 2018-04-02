@@ -36,6 +36,9 @@ module.exports = (webpackConfig, env) => {
       hash: true,
       headScripts: production ? null : ['/roadhog.dll.js'],
     }),
+    new webpack.DefinePlugin({
+      BASE_URL: production ? JSON.stringify('') : JSON.stringify('http://localhost:8000/api/v1'),
+    }),
   ])
 
   // Alias

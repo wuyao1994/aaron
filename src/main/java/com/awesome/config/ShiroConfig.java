@@ -25,7 +25,34 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
-public class ShrioConfig {
+public class ShiroConfig {
+	@Bean(name = "shiroFilter")
+	public ShiroFilterFactoryBean shiroFilter() {
+		ShiroFilterFactoryBean shiroFilter = new ShiroFilterFactoryBean();
+		shiroFilter.setLoginUrl("/user/login");
+		shiroFilter.setSuccessUrl("/index");
+		Map<String, String> filterChainDefinitionMapping = new HashMap<>();
+		filterChainDefinitionMapping.put("/user/login", "authc");
+		filterChainDefinitionMapping.put("/user/logout", "logout");
+		filterChainDefinitionMapping.put("/user", "anon");
+		filterChainDefinitionMapping.put("/login", "anon");
+		filterChainDefinitionMapping.put("/**", "user");
+		shiroFilter.setFilterChainDefinitionMap(filterChainDefinitionMapping);
+		shiroFilter.setSecurityManager(securityManager());
+		Map<String, Filter> filters = new HashMap<>();
+		filters.put("anon", new AnonymousFilter());
+		filters.put("authc", new MyFromAuthenticationFilter());
+		filters.put("logout", new MyLogoutFilter());
+		filters.put("user", new MyUserFilter());
+		filters.put("roles", new RolesAuthorizationFilter());
+		shiroFilter.setFilters(filters);
+
+		return shiroFilter;
+
+	}
+
+
+
 	/**
 	 * 实现了Initializable或者Destroyable的shiro对象将会自动调用init() and/or destory()方法
 	 * 所以这个Bean需要使用 @DependsOn 在其它对象之前初始化
@@ -95,29 +122,4 @@ public class ShrioConfig {
 		securityManager.setRememberMeManager(rememberMeManager());
 		return securityManager;
 	}
-
-	@Bean(name = "shiroFilter")
-    public ShiroFilterFactoryBean shiroFilter() {
-	    ShiroFilterFactoryBean shiroFilter = new ShiroFilterFactoryBean();
-	    shiroFilter.setLoginUrl("/user/login");
-	    shiroFilter.setSuccessUrl("/index");
-        Map<String, String> filterChainDefinitionMapping = new HashMap<>();
-        filterChainDefinitionMapping.put("/user/login", "authc");
-        filterChainDefinitionMapping.put("/user/logout", "logout");
-        filterChainDefinitionMapping.put("/user", "anon");
-        filterChainDefinitionMapping.put("/login", "anon");
-        filterChainDefinitionMapping.put("/**", "user");
-        shiroFilter.setFilterChainDefinitionMap(filterChainDefinitionMapping);
-        shiroFilter.setSecurityManager(securityManager());
-        Map<String, Filter> filters = new HashMap<>();
-        filters.put("anon", new AnonymousFilter());
-        filters.put("authc", new MyFromAuthenticationFilter());
-        filters.put("logout", new MyLogoutFilter());
-        filters.put("user", new MyUserFilter());
-        filters.put("roles", new RolesAuthorizationFilter());
-        shiroFilter.setFilters(filters);
-
-        return shiroFilter;
-
-    }
 }

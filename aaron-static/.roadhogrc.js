@@ -7,11 +7,12 @@ export default {
   outputPath: `./dist/${version}`,
   // 接口代理示例
   proxy: {
-    "/api/v1/weather": {
+    "proxy": [{
+      "context": ['/api/v1', '/common'],
       "target": "http://localhost:7000/",
       "changeOrigin": true,
       "pathRewrite": { "^/api/v1": "" }
-    },
+    }],
   },
   env: {
     development: {
