@@ -1,5 +1,6 @@
 import axios from 'axios'
 import lodash from 'lodash'
+import qs from 'qs'
 import pathToRegexp from 'path-to-regexp'
 import { message } from 'antd'
 
@@ -36,7 +37,7 @@ const fetch = (options) => {
     case 'post':
       return axios.post(
         url,
-        clonedata,
+        qs.stringify(clonedata, { indices: false }),
       )
     case 'delete':
       return axios.delete(
