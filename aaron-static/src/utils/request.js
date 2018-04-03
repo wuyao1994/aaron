@@ -49,12 +49,12 @@ const fetch = (options) => {
     case 'put':
       return axios.put(
         url,
-        clonedata,
+        qs.stringify(clonedata, { indices: false }),
       )
     case 'patch':
       return axios.patch(
         url,
-        clonedata
+        qs.stringify(clonedata, { indices: false }),
       )
     default:
       return axios(options)
@@ -65,11 +65,11 @@ export default function request (options) {
   return fetch(options).then((response) => {
     const { statusText, status } = response
     let data = response.data
-    if (data instanceof Array) {
-      data = {
-        list: data,
-      }
-    }
+    // if (data instanceof Array) {
+    //   data = {
+    //     list: data,
+    //   }
+    // }
     return Promise.resolve({
       success: true,
       message: statusText,

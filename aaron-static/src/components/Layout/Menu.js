@@ -9,7 +9,7 @@ const { SubMenu } = Menu
 const Menus = ({
   menu, location
 }) => {
-  const menuTree = arrayToTree(menu.filter(_ => _.mpid !== '-1'), 'id', 'mpid')
+  const menuTree = arrayToTree(menu.filter(_ => _.menuLevel !== '-1'), 'id', 'mpid')
 
   const getMenus = (menuTreeN) => {
     return menuTreeN.map((item) => {
@@ -25,7 +25,7 @@ const Menus = ({
       }
       return (
         <Menu.Item key={item.id}>
-          <Link to={item.route || '#'}>
+          <Link to={item.router || '#'}>
             {item.icon && <Icon type={item.icon} />}
             {item.name}
           </Link>
@@ -41,6 +41,9 @@ const Menus = ({
     </Menu>
   )
 }
-
+Menus.propTypes = {
+  menu: PropTypes.array,
+  location: PropTypes.object,
+}
 export default Menus
 

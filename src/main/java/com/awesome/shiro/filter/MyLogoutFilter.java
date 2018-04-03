@@ -24,6 +24,6 @@ public class MyLogoutFilter extends LogoutFilter {
         } catch (SessionException e) {
             log.debug("Encountered session exception during logout.  This can generally safely be ignored.", e);
         }
-        return super.preHandle(request, response);
+        return false;
 	}
 }

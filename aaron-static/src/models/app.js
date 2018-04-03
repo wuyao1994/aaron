@@ -34,23 +34,22 @@ export default {
   },
   effects: {
     * query ({ payload }, { call, put, select }) {
-      const { success, user } = yield call(query, payload)
+      const { success, user, menu } = yield call(query, payload)
       const { locationPathname } = yield select(_ => _.app)
       if (success && user) {
-        const { list } = yield call(menuService.query)
-        let menu = list
-        const { permissions } = user
-        if (permissions.role === enumRoleType.ADMIN) {
-          permissions.visit = list.map(item => item.id)
-        } else {
-          menu = list
-        }
+        // const { list } = yield call(menuService.query)
+        // let menu = list
+        // const { permissions } = user
+        // if (permissions.role === enumRoleType.ADMIN) {
+        //   permissions.visit = list.map(item => item.id)
+        // } else {
+        //   menu = list
+        // }
 
         yield put({
           type: 'updateState',
           payload: {
             user,
-            permissions,
             menu,
           },
         })
