@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50717
 File Encoding         : 65001
 
-Date: 2018-03-29 22:26:46
+Date: 2018-04-04 11:15:06
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -81,12 +81,9 @@ CREATE TABLE `sys_menu` (
 -- ----------------------------
 -- Records of sys_menu
 -- ----------------------------
-INSERT INTO `sys_menu` VALUES ('0ddd403b78af4c5a877a75421c483d55', '80e8bd5c73014fa68d0b0983ecf45b1b', '80e8bd5c73014fa68d0b0983ecf45b1b', '权限管理', null, '/sys/permission', 'cca83b97b3f4409a96317dbe55f0126e', '3', '2', null, '2017-09-26 14:31:01', '1', null, null);
-INSERT INTO `sys_menu` VALUES ('4dcab7f2ad5f4166996de3ff910ac8c2', null, null, '管理控制台', 'home', '/dashboard', 'ca87eb56a7954f43a212eb0dc2b835f6', '1', '1', null, null, null, null, null);
-INSERT INTO `sys_menu` VALUES ('6bb9338ed85441b097f1a47101457a47', '80e8bd5c73014fa68d0b0983ecf45b1b', '80e8bd5c73014fa68d0b0983ecf45b1b', '菜单管理', null, '/sys/menu', '986800e2c0fc4d7da86a5c39a554a287', '1', '2', null, '2017-09-26 14:30:28', '1', null, null);
-INSERT INTO `sys_menu` VALUES ('80e8bd5c73014fa68d0b0983ecf45b1b', '4dcab7f2ad5f4166996de3ff910ac8c2', '', '系统管理', 'setting', '', 'ce468a33bb1f41e9b7aa3aaa19f05f57', '2', '1', null, '2017-09-26 14:30:14', '1', null, null);
-INSERT INTO `sys_menu` VALUES ('e827ecaf7b6d49e49e0a17342d887267', '80e8bd5c73014fa68d0b0983ecf45b1b', '80e8bd5c73014fa68d0b0983ecf45b1b', '账户管理', null, '/sys/account', '49dda1e85934453dafb1ca36c650d7f4', '4', '2', null, '2017-09-26 14:31:18', '1', null, null);
-INSERT INTO `sys_menu` VALUES ('eeda280dabd34d3fa0bf4c2fd9f50eb8', '80e8bd5c73014fa68d0b0983ecf45b1b', '80e8bd5c73014fa68d0b0983ecf45b1b', '角色管理', null, '/sys/role', '475ba36f30b74c1cb7035242305ee603', '2', '2', null, '2017-09-26 14:30:43', '1', null, null);
+INSERT INTO `sys_menu` VALUES ('4dcab7f2ad5f4166996de3ff910ac8c2', null, null, 'Dashboard', 'dashboard', '/dashboard', 'ca87eb56a7954f43a212eb0dc2b835f6', '1', '1', null, null, null, null, null);
+INSERT INTO `sys_menu` VALUES ('6bb9338ed85441b097f1a47101457a47', '80e8bd5c73014fa68d0b0983ecf45b1b', '80e8bd5c73014fa68d0b0983ecf45b1b', 'ECharts', 'line-chart', '/chart/ECharts', '986800e2c0fc4d7da86a5c39a554a287', '1', '2', null, '2017-09-26 14:30:28', '1', null, null);
+INSERT INTO `sys_menu` VALUES ('80e8bd5c73014fa68d0b0983ecf45b1b', '4dcab7f2ad5f4166996de3ff910ac8c2', '', 'Charts', 'code-o', '', 'ce468a33bb1f41e9b7aa3aaa19f05f57', '2', '1', null, '2017-09-26 14:30:14', '1', null, null);
 
 -- ----------------------------
 -- Table structure for sys_permission
