@@ -36,6 +36,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	}
 
 
+
 	@GetMapping
 	public Object index() {
 		return ResponseEntity.ok().body(indexHtml);
