@@ -6,7 +6,10 @@
 	<groupId>com.awesome</groupId>
 	<artifactId>aaron</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+    <modules>
+        <module>upms</module>
+    </modules>
+    <packaging>pom</packaging>
 
 	<name>aaron</name>
 	<description>aaron project for Spring Boot</description>
