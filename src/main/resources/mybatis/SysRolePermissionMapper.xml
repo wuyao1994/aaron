@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.awesome.mapper.SysRolePermissionMapper">
-  <resultMap id="BaseResultMap" type="com.awesome.model.SysRolePermissionKey">
+<mapper namespace="com.aaron.mapper.SysRolePermissionMapper">
+  <resultMap id="BaseResultMap" type="com.aaron.model.SysRolePermissionKey">
     <id column="role_id" jdbcType="CHAR" property="roleId" />
     <id column="permission_id" jdbcType="CHAR" property="permissionId" />
   </resultMap>
@@ -66,7 +66,7 @@
   <sql id="Base_Column_List">
     role_id, permission_id
   </sql>
-  <select id="selectByExample" parameterType="com.awesome.model.SysRolePermissionExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.aaron.model.SysRolePermissionExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -80,22 +80,22 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.awesome.model.SysRolePermissionKey">
+  <delete id="deleteByPrimaryKey" parameterType="com.aaron.model.SysRolePermissionKey">
     delete from sys_role_permission
     where role_id = #{roleId,jdbcType=CHAR}
       and permission_id = #{permissionId,jdbcType=CHAR}
   </delete>
-  <delete id="deleteByExample" parameterType="com.awesome.model.SysRolePermissionExample">
+  <delete id="deleteByExample" parameterType="com.aaron.model.SysRolePermissionExample">
     delete from sys_role_permission
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.awesome.model.SysRolePermissionKey">
+  <insert id="insert" parameterType="com.aaron.model.SysRolePermissionKey">
     insert into sys_role_permission (role_id, permission_id)
     values (#{roleId,jdbcType=CHAR}, #{permissionId,jdbcType=CHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.awesome.model.SysRolePermissionKey">
+  <insert id="insertSelective" parameterType="com.aaron.model.SysRolePermissionKey">
     insert into sys_role_permission
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="roleId != null">
@@ -114,7 +114,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.awesome.model.SysRolePermissionExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.aaron.model.SysRolePermissionExample" resultType="java.lang.Long">
     select count(*) from sys_role_permission
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />

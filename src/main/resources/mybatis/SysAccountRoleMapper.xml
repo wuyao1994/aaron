@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.awesome.mapper.SysAccountRoleMapper">
-  <resultMap id="BaseResultMap" type="com.awesome.model.SysAccountRoleKey">
+<mapper namespace="com.aaron.mapper.SysAccountRoleMapper">
+  <resultMap id="BaseResultMap" type="com.aaron.model.SysAccountRoleKey">
     <id column="role_id" jdbcType="CHAR" property="roleId" />
     <id column="account_id" jdbcType="CHAR" property="accountId" />
   </resultMap>
@@ -66,7 +66,7 @@
   <sql id="Base_Column_List">
     role_id, account_id
   </sql>
-  <select id="selectByExample" parameterType="com.awesome.model.SysAccountRoleExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.aaron.model.SysAccountRoleExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -80,22 +80,22 @@
       order by ${orderByClause}
     </if>
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.awesome.model.SysAccountRoleKey">
+  <delete id="deleteByPrimaryKey" parameterType="com.aaron.model.SysAccountRoleKey">
     delete from sys_account_role
     where role_id = #{roleId,jdbcType=CHAR}
       and account_id = #{accountId,jdbcType=CHAR}
   </delete>
-  <delete id="deleteByExample" parameterType="com.awesome.model.SysAccountRoleExample">
+  <delete id="deleteByExample" parameterType="com.aaron.model.SysAccountRoleExample">
     delete from sys_account_role
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.awesome.model.SysAccountRoleKey">
+  <insert id="insert" parameterType="com.aaron.model.SysAccountRoleKey">
     insert into sys_account_role (role_id, account_id)
     values (#{roleId,jdbcType=CHAR}, #{accountId,jdbcType=CHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.awesome.model.SysAccountRoleKey">
+  <insert id="insertSelective" parameterType="com.aaron.model.SysAccountRoleKey">
     insert into sys_account_role
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="roleId != null">
@@ -114,7 +114,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.awesome.model.SysAccountRoleExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.aaron.model.SysAccountRoleExample" resultType="java.lang.Long">
     select count(*) from sys_account_role
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />

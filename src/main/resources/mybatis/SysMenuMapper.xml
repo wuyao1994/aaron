@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.awesome.mapper.SysMenuMapper">
-  <resultMap id="BaseResultMap" type="com.awesome.model.SysMenu">
+<mapper namespace="com.aaron.mapper.SysMenuMapper">
+  <resultMap id="BaseResultMap" type="com.aaron.model.SysMenu">
     <id column="id" jdbcType="CHAR" property="id" />
     <result column="bpid" jdbcType="CHAR" property="bpid" />
     <result column="mpid" jdbcType="CHAR" property="mpid" />
@@ -79,7 +79,7 @@
     id, bpid, mpid, name, icon, router, permission, sequence, menu_level, help_code, 
     create_time, create_by, update_time, update_by
   </sql>
-  <select id="selectByExample" parameterType="com.awesome.model.SysMenuExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.aaron.model.SysMenuExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -103,13 +103,13 @@
     delete from sys_menu
     where id = #{id,jdbcType=CHAR}
   </delete>
-  <delete id="deleteByExample" parameterType="com.awesome.model.SysMenuExample">
+  <delete id="deleteByExample" parameterType="com.aaron.model.SysMenuExample">
     delete from sys_menu
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.awesome.model.SysMenu">
+  <insert id="insert" parameterType="com.aaron.model.SysMenu">
     insert into sys_menu (id, bpid, mpid, name, 
       icon, router, permission, 
       sequence, menu_level, help_code, 
@@ -121,7 +121,7 @@
       #{createTime,jdbcType=TIMESTAMP}, #{createBy,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}, 
       #{updateBy,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.awesome.model.SysMenu">
+  <insert id="insertSelective" parameterType="com.aaron.model.SysMenu">
     insert into sys_menu
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -212,7 +212,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.awesome.model.SysMenuExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.aaron.model.SysMenuExample" resultType="java.lang.Long">
     select count(*) from sys_menu
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -288,7 +288,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.awesome.model.SysMenu">
+  <update id="updateByPrimaryKeySelective" parameterType="com.aaron.model.SysMenu">
     update sys_menu
     <set>
       <if test="bpid != null">
@@ -333,7 +333,7 @@
     </set>
     where id = #{id,jdbcType=CHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.awesome.model.SysMenu">
+  <update id="updateByPrimaryKey" parameterType="com.aaron.model.SysMenu">
     update sys_menu
     set bpid = #{bpid,jdbcType=CHAR},
       mpid = #{mpid,jdbcType=CHAR},

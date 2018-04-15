@@ -22,7 +22,7 @@
         </javaTypeResolver>
 
         <!--  Model Configurations  -->
-        <javaModelGenerator targetPackage="com.awesome.model" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.aaron.model" targetProject="src/main/java">
             <property name="enableSubPackages" value="false" />
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
@@ -33,7 +33,7 @@
         </sqlMapGenerator>
 
         <!--  Mapper Interface Configurations  -->
-        <javaClientGenerator targetPackage="com.awesome.mapper" targetProject="src/main/java" type="XMLMAPPER">
+        <javaClientGenerator targetPackage="com.aaron.mapper" targetProject="src/main/java" type="XMLMAPPER">
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
 
