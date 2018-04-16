@@ -7,7 +7,7 @@
     <groupId>com.upms</groupId>
     <artifactId>upms</artifactId>
     <packaging>pom</packaging>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <modules>
         <module>upms-client</module>
