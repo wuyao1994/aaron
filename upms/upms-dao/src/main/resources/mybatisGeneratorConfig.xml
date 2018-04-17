@@ -28,7 +28,7 @@
         </javaModelGenerator>
 
         <!--  Mapper XML Configurations  -->
-        <sqlMapGenerator targetPackage="mybatis" targetProject="src/main/resources">
+        <sqlMapGenerator targetPackage="com.upms.rpc.service.dao.mapper" targetProject="E:/WorkSpace/aaron/upms/upms-rpc-service/src/main/java">
             <property name="enableSubPackages" value="false" />
         </sqlMapGenerator>
 
