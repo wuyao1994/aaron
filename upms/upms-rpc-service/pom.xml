@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>upms-rpc-service</artifactId>
+    <packaging>jar</packaging>
 
     <name>upms-rpc-service</name>
     <url>http://www.example.com</url>
@@ -20,9 +21,10 @@
 
     <dependencies>
         <dependency>
-            <artifactId>upms-common</artifactId>
+            <artifactId>upms-rpc-api</artifactId>
             <groupId>com.upms</groupId>
             <version>1.0.0</version>
+            <type>jar</type>
         </dependency>
     </dependencies>
 
@@ -52,6 +54,18 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>1.4.1.RELEASE</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>

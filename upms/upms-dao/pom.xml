@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>upms-dao</artifactId>
+    <packaging>jar</packaging>
 
     <name>upms-dao</name>
     <url>http://www.example.com</url>

@@ -5,14 +5,14 @@
     <parent>
         <artifactId>upms</artifactId>
         <groupId>com.upms</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>upms-rpc-api</artifactId>
+    <packaging>jar</packaging>
 
     <name>upms-rpc-api</name>
-    <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
     <properties>
@@ -21,16 +21,15 @@
 
     <dependencies>
         <dependency>
-            <artifactId>upms-common</artifactId>
+            <artifactId>upms-dao</artifactId>
             <groupId>com.upms</groupId>
             <version>1.0.0</version>
+            <type>jar</type>
         </dependency>
     </dependencies>
 
     <build>
-        <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
-            <plugins>
-            </plugins>
-        </pluginManagement>
+        <plugins>
+        </plugins>
     </build>
 </project>
