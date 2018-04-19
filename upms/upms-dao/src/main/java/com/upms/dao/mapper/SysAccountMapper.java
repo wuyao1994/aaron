@@ -3,8 +3,11 @@ package com.upms.dao.mapper;
 import com.upms.dao.model.SysAccount;
 import com.upms.dao.model.SysAccountExample;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface SysAccountMapper {
     long countByExample(SysAccountExample example);
 

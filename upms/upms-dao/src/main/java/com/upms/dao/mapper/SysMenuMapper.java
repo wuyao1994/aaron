@@ -3,8 +3,11 @@ package com.upms.dao.mapper;
 import com.upms.dao.model.SysMenu;
 import com.upms.dao.model.SysMenuExample;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface SysMenuMapper {
     long countByExample(SysMenuExample example);
 

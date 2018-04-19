@@ -1,4 +1,4 @@
-package com.upms;
+package com.upms.dao;
 
 import static org.junit.Assert.assertTrue;
 

@@ -3,8 +3,11 @@ package com.upms.dao.mapper;
 import com.upms.dao.model.SysRole;
 import com.upms.dao.model.SysRoleExample;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface SysRoleMapper {
     long countByExample(SysRoleExample example);
 

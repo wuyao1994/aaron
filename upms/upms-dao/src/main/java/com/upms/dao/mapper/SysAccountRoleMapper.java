@@ -3,8 +3,11 @@ package com.upms.dao.mapper;
 import com.upms.dao.model.SysAccountRoleExample;
 import com.upms.dao.model.SysAccountRoleKey;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface SysAccountRoleMapper {
     long countByExample(SysAccountRoleExample example);
 

@@ -3,8 +3,11 @@ package com.upms.dao.mapper;
 import com.upms.dao.model.SysPermission;
 import com.upms.dao.model.SysPermissionExample;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface SysPermissionMapper {
     long countByExample(SysPermissionExample example);
 
