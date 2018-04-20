@@ -15,7 +15,7 @@ server:
   session:
     timeout: 1800
 mybatis:
-  mapper-locations: classpath:/com/upms/rpc/service/dao/mapper/*Mapper.xml
+  mapper-locations: classpath:/mybatis/*Mapper.xml
 pagehelper:
   support-methods-arguments: true
   params: pageNum=page

@@ -24,6 +24,9 @@
     <dubbo.version>2.5.10</dubbo.version>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
+    <zkclient.version>0.2</zkclient.version>
+    <zookeeper.version>3.4.9</zookeeper.version>
+    <curator-framework.version>2.12.0</curator-framework.version>
   </properties>
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -86,6 +89,45 @@
           <artifactId>servlet-api</artifactId>
         </exclusion>
       </exclusions>
+    </dependency>
+
+    <!-- ZK -->
+    <dependency>
+      <groupId>org.apache.zookeeper</groupId>
+      <artifactId>zookeeper</artifactId>
+      <version>${zookeeper.version}</version>
+      <exclusions>
+          <exclusion>
+              <groupId>org.slf4j</groupId>
+              <artifactId>slf4j-log4j12</artifactId>
+          </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>com.101tec</groupId>
+      <artifactId>zkclient</artifactId>
+      <version>${zkclient.version}</version>
+      <exclusions>
+          <exclusion>
+              <artifactId>slf4j-api</artifactId>
+              <groupId>org.slf4j</groupId>
+          </exclusion>
+          <exclusion>
+              <artifactId>log4j</artifactId>
+              <groupId>log4j</groupId>
+          </exclusion>
+          <exclusion>
+              <artifactId>slf4j-log4j12</artifactId>
+              <groupId>org.slf4j</groupId>
+          </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.curator</groupId>
+      <artifactId>curator-framework</artifactId>
+      <version>${curator-framework.version}</version>
     </dependency>
 
     <dependency>
