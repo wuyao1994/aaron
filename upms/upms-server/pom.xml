@@ -22,10 +22,10 @@
 
     <dependencies>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
+            <artifactId>upms-rpc-service</artifactId>
+            <groupId>com.upms</groupId>
+            <version>1.0.0</version>
+            <type>jar</type>
         </dependency>
     </dependencies>
 

@@ -1,0 +1,15 @@
+server:
+  port: 8000
+  session:
+    timeout: 1800
+dubbo:
+  application:
+    id: upms-server
+    name: upms-server
+  protocol:
+    id: dubbo
+    name: dubbo
+    port: 20881
+  registry:
+    id: upms-registry
+    address: zookeeper://zkserver:2181
