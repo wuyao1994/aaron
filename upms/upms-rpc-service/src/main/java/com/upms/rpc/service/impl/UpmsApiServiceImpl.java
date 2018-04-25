@@ -11,7 +11,11 @@ import com.upms.dao.mapper.*;
 import com.upms.dao.model.*;
 import com.upms.rpc.api.UpmsApiService;
 
-@Service(version = "1.0.0", application = "${dubbo.application.id}", protocol = "${dubbo.protocol.id}", registry = "${dubbo.registry.id}")
+@Service(version = "1.0.0",
+        application = "${dubbo.application.id}",
+        protocol = "${dubbo.protocol.id}",
+        registry = "${dubbo.registry.id}"
+)
 public class UpmsApiServiceImpl implements UpmsApiService {
 
 	@Autowired
