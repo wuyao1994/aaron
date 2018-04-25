@@ -1,19 +1,22 @@
 package com.upms.rpc.api;
 
 import java.util.List;
+import java.util.Map;
 
+import com.upms.dao.model.ShiroUser;
 import com.upms.dao.model.SysMenu;
 import com.upms.dao.model.SysPermission;
 import com.upms.dao.model.SysRole;
 
 public interface UpmsApiService {
-	public List<SysRole> selectRolesByAccountId(String accountId);
+
+	public ShiroUser login(String username, String password);
 
 
 
-	public List<SysPermission> selectPermissionByRoleIds(List<String> roleIds);
+	public void setShiroUserExtraInfo(ShiroUser shiroUser);
 
 
 
-	public List<SysMenu> selectMenuByRoleIds(List<String> roleIds);
+	public Map<String, Object> getUser();
 }

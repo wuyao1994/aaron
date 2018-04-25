@@ -1,8 +1,8 @@
-package com.upms.dao.model;
+package com.upms.rpc.service.model;
+
+import com.upms.rpc.service.util.Securitys;
 
 import java.util.List;
-
-import com.aaron.util.Securitys;
 
 public class User {
 	private String			name;

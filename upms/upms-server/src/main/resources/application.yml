@@ -1,5 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/aaron?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false
+    username: root
+    password: password
+  resources:
+    chain:
+      gzipped: true
 server:
-  port: 8000
+  port: 7000
   session:
     timeout: 1800
 dubbo:

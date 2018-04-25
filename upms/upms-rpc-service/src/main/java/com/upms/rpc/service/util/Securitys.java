@@ -1,10 +1,11 @@
-package com.common.util;
+package com.upms.rpc.service.util;
+
+import java.util.List;
+
+import org.apache.shiro.SecurityUtils;
 
 import com.upms.dao.model.Menu;
 import com.upms.dao.model.ShiroUser;
-import org.apache.shiro.SecurityUtils;
-
-import java.util.List;
 
 public class Securitys extends SecurityUtils {
 	public static ShiroUser getUser() {

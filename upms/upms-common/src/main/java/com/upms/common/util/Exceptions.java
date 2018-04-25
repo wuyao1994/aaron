@@ -1,4 +1,4 @@
-package com.common.util;
+package com.upms.common.util;
 
 public class Exceptions {
 	/**

@@ -26,6 +26,7 @@
             <artifactId>upms-common</artifactId>
             <groupId>com.upms</groupId>
             <version>1.0.0</version>
+            <type>jar</type>
         </dependency>
     </dependencies>
 

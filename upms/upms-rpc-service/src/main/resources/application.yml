@@ -11,7 +11,7 @@ spring:
   profiles:
     active: development
 server:
-  port: 7000
+  port: 7001
   session:
     timeout: 1800
 mybatis:

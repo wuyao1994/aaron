@@ -1,4 +1,4 @@
-package com.common.util;
+package com.upms.common.util;
 
 import java.io.IOException;
 import java.io.InputStream;
