@@ -1,4 +1,6 @@
 spring:
+  mvc:
+      static-path-pattern: /static/**
   datasource:
     url: jdbc:mysql://localhost:3306/aaron?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&useSSL=false
     username: root
