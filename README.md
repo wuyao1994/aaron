@@ -24,6 +24,7 @@
 | ------------- | ----- |
 | spring boot | [http://projects.spring.io/spring-boot/](http://projects.spring.io/spring-boot/ "http://projects.spring.io/spring-boot/") |
 | spring cloud | [http://projects.spring.io/spring-cloud/](http://projects.spring.io/spring-cloud/ "http://projects.spring.io/spring-cloud/") |
+| dubbo | [https://github.com/apache/incubator-dubbo](https://github.com/apache/incubator-dubbo/ "https://github.com/apache/incubator-dubbo/") |
 
 ## 参考项目资料
 
