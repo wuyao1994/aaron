@@ -1,5 +1,6 @@
 package com.upms.client.shiro.realm;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
@@ -12,9 +13,9 @@ import com.upms.rpc.api.SysAccountService;
 import com.upms.rpc.api.UpmsApiService;
 
 public class ShiroRealm extends AuthorizingRealm {
-	@Autowired
-	private SysAccountService	mSysAccountService;
-	@Autowired
+    @Reference(version = "1.0.0",
+            application = "${dubbo.application.id}",
+            url = "dubbo://localhost:20880")
 	private UpmsApiService		mUpmsApiService;
 
 

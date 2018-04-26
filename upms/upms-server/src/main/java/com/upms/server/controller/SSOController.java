@@ -14,7 +14,7 @@ import com.upms.rpc.api.UpmsApiService;
 public class SSOController {
     @Reference(version = "1.0.0",
             application = "${dubbo.application.id}",
-            url = "dubbo://localhost:20881")
+            url = "dubbo://localhost:20880")
 	private UpmsApiService		mUpmsApiService;
 
 

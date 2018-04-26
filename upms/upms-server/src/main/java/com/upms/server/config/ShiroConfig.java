@@ -1,14 +1,10 @@
-package com.upms.client.config;
+package com.upms.server.config;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.Filter;
 
-import com.upms.client.shiro.filter.MyFromAuthenticationFilter;
-import com.upms.client.shiro.filter.MyLogoutFilter;
-import com.upms.client.shiro.filter.MyUserFilter;
-import com.upms.client.shiro.realm.ShiroRealm;
 import org.apache.shiro.cache.ehcache.EhCacheManager;
 import org.apache.shiro.codec.Base64;
 import org.apache.shiro.mgt.SecurityManager;
@@ -24,6 +20,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 
+import com.upms.client.shiro.filter.MyFromAuthenticationFilter;
+import com.upms.client.shiro.filter.MyLogoutFilter;
+import com.upms.client.shiro.filter.MyUserFilter;
+import com.upms.client.shiro.realm.ShiroRealm;
 
 @Configuration
 public class ShiroConfig {
@@ -57,7 +57,7 @@ public class ShiroConfig {
 	/**
 	 * 实现了Initializable或者Destroyable的shiro对象将会自动调用init() and/or destory()方法
 	 * 所以这个Bean需要使用 @DependsOn 在其它对象之前初始化
-	 *
+	 * 
 	 * @return
 	 */
 	@Bean
