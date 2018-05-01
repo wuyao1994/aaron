@@ -1,18 +1,14 @@
 package com.upms.rpc.service.impl;
 
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
-import com.upms.rpc.service.model.User;
-import com.upms.rpc.service.util.Securitys;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.google.common.collect.Maps;
 import com.upms.common.util.PasswordUtils;
 import com.upms.dao.mapper.*;
 import com.upms.dao.model.*;
@@ -21,7 +17,8 @@ import com.upms.rpc.api.UpmsApiService;
 @Service(version = "1.0.0",
         application = "${dubbo.application.id}",
         protocol = "${dubbo.protocol.id}",
-        registry = "${dubbo.registry.id}")
+        registry = "${dubbo.registry.id}",
+		timeout = 1200000)
 public class UpmsApiServiceImpl implements UpmsApiService {
 	@Autowired
 	private SysAccountMapper		sysAccountMapper;
@@ -69,6 +66,7 @@ public class UpmsApiServiceImpl implements UpmsApiService {
 		List<SysRole> roles;
 		List<SysPermission> permissions;
 		List<SysMenu> menus;
+
 		if (shiroUser.isAdmin()) {
 			roles = sysRoleMapper.selectByExample(null);
 			permissions = sysPermissionMapper.selectByExample(null);
@@ -117,16 +115,4 @@ public class UpmsApiServiceImpl implements UpmsApiService {
 		}).collect(Collectors.toList()));
 	}
 
-
-
-	@Override
-	public Map<String, Object> getUser() {
-		Map<String, Object> res = Maps.newHashMap();
-		res.put("user", User.buildUser());
-		if (Securitys.isAuthenticatedOrRemembered() && Securitys.getMenus() == null) {
-			setShiroUserExtraInfo(Securitys.getUser());
-		}
-		res.put("menu", Securitys.getMenus());
-		return res;
-	}
 }

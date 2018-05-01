@@ -1,21 +1,20 @@
-package com.upms.client.shiro.realm;
+package com.upms.server.shiro.realm;
 
-import com.alibaba.dubbo.config.annotation.Reference;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
-import org.springframework.beans.factory.annotation.Autowired;
 
-import com.upms.dao.model.*;
-import com.upms.rpc.api.SysAccountService;
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.upms.dao.model.ShiroUser;
 import com.upms.rpc.api.UpmsApiService;
 
 public class ShiroRealm extends AuthorizingRealm {
     @Reference(version = "1.0.0",
             application = "${dubbo.application.id}",
-            url = "dubbo://localhost:20880")
+            url = "dubbo://localhost:20880",
+			timeout = 1200000)
 	private UpmsApiService		mUpmsApiService;
 
 
@@ -50,7 +49,7 @@ public class ShiroRealm extends AuthorizingRealm {
 		UsernamePasswordToken usernamePasswordToken = (UsernamePasswordToken) authenticationToken;
 		String username = usernamePasswordToken.getUsername();
 		String password = new String(usernamePasswordToken.getPassword());
-
-		return new SimpleAuthenticationInfo(mUpmsApiService.login(username, password), usernamePasswordToken.getPassword(), getName());
+		ShiroUser shiroUser = mUpmsApiService.login(username, password);
+		return new SimpleAuthenticationInfo(shiroUser, usernamePasswordToken.getPassword(), getName());
 	}
 }

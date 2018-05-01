@@ -1,6 +1,8 @@
 package com.upms.dao.model;
 
-public class Menu {
+import java.io.Serializable;
+
+public class Menu implements Serializable {
 
 	private String	id;
 	private String	bpid;

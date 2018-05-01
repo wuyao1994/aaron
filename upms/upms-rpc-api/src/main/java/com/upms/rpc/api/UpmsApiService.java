@@ -15,8 +15,4 @@ public interface UpmsApiService {
 
 
 	public void setShiroUserExtraInfo(ShiroUser shiroUser);
-
-
-
-	public Map<String, Object> getUser();
 }

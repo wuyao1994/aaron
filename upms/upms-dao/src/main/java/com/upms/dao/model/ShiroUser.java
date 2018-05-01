@@ -4,14 +4,14 @@ import java.io.Serializable;
 import java.util.List;
 
 public class ShiroUser implements Serializable {
-	private String					accountId;
-	private String					loginName;
-	private String					name;
-	private boolean					isAdmin;
-	private transient List<String>	roleIdList;
-	private transient List<Menu>	menus;
-	private transient List<String>	roles;
-	private transient List<String>	permissions;
+	private String			accountId;
+	private String			loginName;
+	private String			name;
+	private boolean			isAdmin;
+	private List<String>	roleIdList;
+	private List<Menu>		menus;
+	private List<String>	roles;
+	private List<String>	permissions;
 
 
 

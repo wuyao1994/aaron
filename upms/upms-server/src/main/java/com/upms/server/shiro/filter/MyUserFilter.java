@@ -1,4 +1,4 @@
-package com.upms.client.shiro.filter;
+package com.upms.server.shiro.filter;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;

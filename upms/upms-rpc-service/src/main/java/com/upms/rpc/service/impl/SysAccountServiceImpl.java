@@ -15,7 +15,8 @@ import com.upms.rpc.api.SysAccountService;
         version = "1.0.0",
         application = "${dubbo.application.id}",
         protocol = "${dubbo.protocol.id}",
-        registry = "${dubbo.registry.id}"
+        registry = "${dubbo.registry.id}",
+		timeout = 1200000
 )
 public class SysAccountServiceImpl implements SysAccountService {
 	@Autowired

@@ -5,6 +5,10 @@ import java.util.Map;
 
 import javax.servlet.Filter;
 
+import com.upms.server.shiro.filter.MyFromAuthenticationFilter;
+import com.upms.server.shiro.filter.MyLogoutFilter;
+import com.upms.server.shiro.filter.MyUserFilter;
+import com.upms.server.shiro.realm.ShiroRealm;
 import org.apache.shiro.cache.ehcache.EhCacheManager;
 import org.apache.shiro.codec.Base64;
 import org.apache.shiro.mgt.SecurityManager;
@@ -19,11 +23,6 @@ import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreato
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
-
-import com.upms.client.shiro.filter.MyFromAuthenticationFilter;
-import com.upms.client.shiro.filter.MyLogoutFilter;
-import com.upms.client.shiro.filter.MyUserFilter;
-import com.upms.client.shiro.realm.ShiroRealm;
 
 @Configuration
 public class ShiroConfig {

@@ -1,4 +1,4 @@
-package com.upms.rpc.service.util;
+package com.upms.server.util;
 
 import java.util.List;
 

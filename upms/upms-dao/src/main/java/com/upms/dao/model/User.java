@@ -1,6 +1,5 @@
-package com.upms.rpc.service.model;
+package com.upms.dao.model;
 
-import com.upms.rpc.service.util.Securitys;
 
 import java.util.List;
 
@@ -8,22 +7,9 @@ public class User {
 	private String			name;
 	private String			accountId;
 	private boolean			isAdmin;
-	private List<String>	roles;
+	private List<String> roles;
 	private List<String>	permissions;
 
-
-
-	public static User buildUser() {
-		if (!Securitys.isAuthenticatedOrRemembered()) {
-			return null;
-		}
-
-		User user = new User();
-		user.setName(Securitys.getName());
-		user.setAccountId(Securitys.getAccountId());
-		user.setAdmin(Securitys.isAdmin());
-		return user;
-	}
 
 
 
