@@ -19,8 +19,9 @@ import static org.apache.shiro.SecurityUtils.getSubject;
 public class SSOController {
     @Reference(version = "1.0.0",
             application = "${dubbo.application.id}",
-            url = "dubbo://192.168.142.1:20880",
-			timeout = 1200000)
+            url = "dubbo://localhost:20880",
+			timeout = 1200000
+    )
 	private UpmsApiService		mUpmsApiService;
 
 

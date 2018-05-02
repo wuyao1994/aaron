@@ -13,7 +13,7 @@
     <packaging>jar</packaging>
 
     <name>upms-rpc-service</name>
-    <url>http://www.example.com</url>
+    <url>https://tainfu.club</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -46,6 +46,15 @@
             </resource>
         </resources>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <outputDirectory>${basedir}/jar</outputDirectory>
+                    <jarName>upm_rpc_service</jarName>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>

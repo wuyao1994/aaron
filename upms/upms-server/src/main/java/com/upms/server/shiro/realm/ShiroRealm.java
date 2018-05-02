@@ -14,7 +14,8 @@ public class ShiroRealm extends AuthorizingRealm {
     @Reference(version = "1.0.0",
             application = "${dubbo.application.id}",
             url = "dubbo://localhost:20880",
-			timeout = 1200000)
+			timeout = 1200000
+    )
 	private UpmsApiService		mUpmsApiService;
 
 
@@ -31,7 +32,7 @@ public class ShiroRealm extends AuthorizingRealm {
 		SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
 		info.addStringPermissions(shiroUser.getPermissions());
 		info.addRoles(shiroUser.getRoles());
-		return null;
+		return info;
 	}
 
 

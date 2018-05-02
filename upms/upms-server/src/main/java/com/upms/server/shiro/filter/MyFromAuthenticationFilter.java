@@ -13,7 +13,8 @@ public class MyFromAuthenticationFilter extends FormAuthenticationFilter {
 	@Override
 	protected boolean onLoginSuccess(AuthenticationToken token, Subject subject, ServletRequest request,
 			ServletResponse response) throws Exception {
-		return false; // ????
+        //we handled the success redirect directly, prevent the chain from continuing:
+		return false;
 	}
 
 
