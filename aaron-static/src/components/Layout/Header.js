@@ -16,7 +16,8 @@ const Header = ({
             style={{
               float: 'right',
             }}
-            title={<span><Icon type="user" />{user.name}</span>}>
+            title={<span><Icon type="user" />{user.name}</span>}
+          >
             <Menu.Item key="logout">
               Sign out
             </Menu.Item>

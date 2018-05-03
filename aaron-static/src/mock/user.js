@@ -39,25 +39,25 @@ module.exports = {
     if (user.length > 0 && user[0].password === password) {
       const now = new Date()
       now.setDate(now.getDate() + 1)
-      res.cookie('token', JSON.stringify({ id: user[0].id, deadline: now.getTime()}), {
+      res.cookie('token', JSON.stringify({ id: user[0].id, deadline: now.getTime() }), {
         maxAge: 900000,
         httpOnly: true,
       })
-      res.json({ success: true, message: 'Ok'})
+      res.json({ success: true, message: 'Ok' })
     } else {
       res.status(400).end()
     }
   },
   [`GET ${apiPrefix}/user`] (req, res) {
     const cookie = req.headers.cookie || ''
-    const cookies = qs.parse(cookie.replace(/\s/g, ''), { delimiter: ';'})
+    const cookies = qs.parse(cookie.replace(/\s/g, ''), { delimiter: ';' })
     const response = {}
     const user = {}
     if (!cookies.token) {
-      res.status(200).send({ message: 'Not Login'})
+      res.status(200).send({ message: 'Not Login' })
       return
     }
-    const token = JSON.parse(cookies.token);
+    const token = JSON.parse(cookies.token)
     if (token) {
       response.success = token.deadline > new Date().getTime()
     }
@@ -75,5 +75,5 @@ module.exports = {
   [`GET ${apiPrefix}/user/logout`] (req, res) {
     res.clearCookie('token')
     res.status(200).end()
-  }
+  },
 }

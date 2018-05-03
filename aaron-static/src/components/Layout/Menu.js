@@ -7,7 +7,7 @@ import pathToRegexp from 'path-to-regexp'
 
 const { SubMenu } = Menu
 const Menus = ({
-  menu, location
+  menu, location,
 }) => {
   const menuTree = arrayToTree(menu.filter(_ => _.menuLevel !== '-1'), 'id', 'mpid')
 

@@ -1,4 +1,5 @@
 const config = require('../utils/config')
+
 const { apiPrefix } = config
 
 let database = [
