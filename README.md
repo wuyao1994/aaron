@@ -2,11 +2,12 @@
 [![React](https://img.shields.io/badge/react-^16.2.0-brightgreen.svg?style=flat-square)](https://github.com/facebook/react)
 [![Ant Design](https://img.shields.io/badge/ant--design-^3.0.3-yellowgreen.svg?style=flat-square)](https://github.com/ant-design/ant-design)
 [![dva](https://img.shields.io/badge/dva-^2.1.0-orange.svg?style=flat-square)](https://github.com/dvajs/dva)
-
+[![dubbo](https://img.shields.io/badge/dubbo-2.5.10-brightgreen.svg)]()
 [![MIT](https://img.shields.io/dub/l/vibe-d.svg?style=flat-square)](http://opensource.org/licenses/MIT)
+![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Stars)
 
 ## 项目介绍
-基于react + spring boot + dubbo 前后端分离开发系统架构.
+基于react + spring boot + dubbo 前后端分离开发系统架构.  
 演示地址 <https://tainfu.club>
 ## 组织结构 
 
