@@ -7,8 +7,9 @@
 
 ## 项目介绍
 基于react + spring boot + spring cloud开发系统架构
-## 组织结构
-    ``` lua
+## 组织结构  
+
+```bash
 aaron
 ├── aaron-static
 |    ├── /dist/           # 项目输出目录
@@ -41,6 +42,7 @@ aaron
 |    ├── upms-rpc-service -- rpc服务提供者
 |    └── upms-server -- 用户权限系统及SSO服务端
 ```
+
 ## 技术选型
 
 ### 前端技术：
