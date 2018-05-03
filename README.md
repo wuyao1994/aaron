@@ -65,17 +65,17 @@ aaron
 | spring cloud | [http://projects.spring.io/spring-cloud/](http://projects.spring.io/spring-cloud/ "http://projects.spring.io/spring-cloud/") |
 | dubbo | [https://github.com/apache/incubator-dubbo](https://github.com/apache/incubator-dubbo/ "https://github.com/apache/incubator-dubbo/") |
 ## 环境搭建
-Mysql5.7+
-Zookeeper
-Node
-Java1.8
-Redis
+Mysql5.7+  
+Zookeeper  
+Node  
+Java1.8  
+Redis  
 ## 快速开始
-本机安装Jdk1.8、Mysql、Redis、Zookeeper并**启动相关服务**，使用默认配置默认端口即可
-**推荐使用IntelliJ IDEA**，本地编译并安装到本地maven仓库
+本机安装Jdk1.8、Mysql、Redis、Zookeeper并**启动相关服务**，使用默认配置默认端口即可  
+**推荐使用IntelliJ IDEA**，本地编译并安装到本地maven仓库  
 克隆项目文件:
 ```bash
-https://github.com/wuyao1994/aaron.git
+git clone https://github.com/wuyao1994/aaron.git
 ```
 
 安装依赖:
@@ -86,8 +86,7 @@ npm i 或者 yarn install
 ```
 后台：
 ```bash
-# 后台
-# 根据 pom.xml 配置下载 maven 依赖包
+根据 pom.xml 配置下载 maven 依赖包
 ```
 构建项目
 前端：
@@ -96,8 +95,7 @@ npm run build
 ```
 后台：
 ```bash
-# 后台
-# 根据 pom.xml 配置下载 maven 依赖包
+mvn clean install
 ```
 开发
 前端
@@ -107,16 +105,15 @@ npm run dev
 ```
 后台:
 ```bash
-# 直接运行 com.upms.rpc.service.UpmsRpcServiceApplication和com.upms.server.UpmsServerApplication main()方法启动后台服务
-# 启动顺序，先启动upm-rpc-service,再启动upm-server
+直接运行 com.upms.rpc.service.UpmsRpcServiceApplication和com.upms.server.UpmsServerApplication main()方法启动后台服务
+启动顺序，先启动upm-rpc-service,再启动upm-server
 ```
-启动顺序，先启动upm-rpc-service,在启动upm-server
 访问：
 ```bash
 打开 http://localhost:8000
 ```
 ## 服务器部署
-前端, 使用nginx 反向代理指向dist目录.
+前端, 使用nginx代理指向dist目录  
 参考配置
 ```bash
      server{
