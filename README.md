@@ -78,7 +78,7 @@ Redis
 git clone https://github.com/wuyao1994/aaron.git
 ```
 
-安装依赖:
+#### 安装依赖  
 前端：
 ```bash
 #开始前请确保没有安装roadhog、webpack到NPM全局目录
@@ -88,7 +88,7 @@ npm i 或者 yarn install
 ```bash
 根据 pom.xml 配置下载 maven 依赖包
 ```
-构建项目
+#### 构建项目  
 前端：
 ```bash
 npm run build
@@ -97,7 +97,7 @@ npm run build
 ```bash
 mvn clean install
 ```
-开发
+#### 开发  
 前端
 ```bash
 npm run build:dll #第一次npm run dev时需运行此命令，使开发时编译更快
@@ -108,7 +108,7 @@ npm run dev
 直接运行 com.upms.rpc.service.UpmsRpcServiceApplication和com.upms.server.UpmsServerApplication main()方法启动后台服务
 启动顺序，先启动upm-rpc-service,再启动upm-server
 ```
-访问：
+#### 访问
 ```bash
 打开 http://localhost:8000
 ```
