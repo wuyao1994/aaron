@@ -12,8 +12,8 @@
 ```bash
 aaron
 ├── aaron-static
-|    ├── /dist/           # 项目输出目录
-     ├── /src/            # 项目源码目录
+|    ├── /dist/           # 项目输出目录
+|    ├── /src/            # 项目源码目录
 │    |     ├── /public/       # 公共文件，编译时copy至dist目录
 │    |     ├── /components/   # UI组件及UI相关方法
 │    |     ├── /routes/       # 路由组件
@@ -30,9 +30,13 @@ aaron
 │    │     |      └── theme.js     # 项目需要在js中使用到样式变量
 │    |     ├── route.js       # 路由配置
 │    |     ├── index.js       # 入口文件
-│    |     └── index.html     
+│    |     └── entry.ejs     
 |    ├── package.json     # 项目信息
 |    ├── .eslintrc        # Eslint配置
+|    ├── version.js
+|    ├── wepack.config.js #webpack配置
+|    ├── theme.config.js  #theme配置        
+|    ├── .roadhogrc.mock.js #mock        
 |    └── .roadhogrc.js    # roadhog配置
 ├── common -- SSM框架公共模块
 ├── upms -- 用户权限管理系统
