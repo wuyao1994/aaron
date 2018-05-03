@@ -39,12 +39,12 @@ aaron
 |    ├── .roadhogrc.mock.js #mock        
 |    └── .roadhogrc.js    # roadhog配置
 ├── common -- SSM框架公共模块
-├── upms -- 用户权限管理系统
-|    ├── upms-common -- upms系统公共模块
-|    ├── upms-dao -- 代码生成模块，无需开发
-|    ├── upms-rpc-api -- rpc接口包
-|    ├── upms-rpc-service -- rpc服务提供者
-|    └── upms-server -- 用户权限系统及SSO服务端
+└── upms -- 用户权限管理系统
+     ├── upms-common -- upms系统公共模块
+     ├── upms-dao -- 代码生成模块，无需开发
+     ├── upms-rpc-api -- rpc接口包
+     ├── upms-rpc-service -- rpc服务提供者
+     └── upms-server -- 用户权限系统及SSO服务端
 ```
 
 ## 技术选型
