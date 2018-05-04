@@ -11,7 +11,7 @@ const fetch = (options) => {
     url,
   } = options
 
-  const clonedata = lodash.cloneDeep(data)
+  const cloneData = lodash.cloneDeep(data)
 
   try {
     let domain = ''
@@ -20,7 +20,14 @@ const fetch = (options) => {
       url = url.slice(domain.length)
     }
     const match = pathToRegexp.parse(url)
+    // 如 url 为 /user/:id，解析为 /user/11
     url = pathToRegexp.compile(url)(data)
+    // 解析 url 之后作用去掉 cloneData 里面的对应的解析参数，如上面的 id
+    for (let item of match) {
+      if (item instanceof Object && item.name in cloneData) {
+        delete cloneData[item.name]
+      }
+    }
     url = domain + url
   } catch (e) {
     message.error(e.message)
@@ -31,30 +38,30 @@ const fetch = (options) => {
       return axios.get(
         url,
         {
-          params: clonedata,
+          params: cloneData,
         }
       )
     case 'post':
       return axios.post(
         url,
-        qs.stringify(clonedata, { indices: false }),
+        qs.stringify(cloneData, { indices: false }),
       )
     case 'delete':
       return axios.delete(
         url,
         {
-          data: clonedata,
+          data: cloneData,
         },
       )
     case 'put':
       return axios.put(
         url,
-        qs.stringify(clonedata, { indices: false }),
+        qs.stringify(cloneData, { indices: false }),
       )
     case 'patch':
       return axios.patch(
         url,
-        qs.stringify(clonedata, { indices: false }),
+        qs.stringify(cloneData, { indices: false }),
       )
     default:
       return axios(options)
