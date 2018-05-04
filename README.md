@@ -24,10 +24,10 @@ aaron
 │    |     ├── /themes/       # 项目样式
 │    |     ├── /mock/         # 数据mock
 │    |     ├── /utils/        # 工具函数
-│    |     |      ├── config.js    # 项目常规配置
 │    │     |      ├── menu.js      # 菜单及面包屑配置
 │    │     |      ├── config.js    # 项目常规配置
 │    │     |      ├── request.js   # 异步请求函数
+│    │     |      ├── inedx.js      # 工具函数
 │    │     |      └── theme.js     # 项目需要在js中使用到样式变量
 │    |     ├── route.js       # 路由配置
 │    |     ├── index.js       # 入口文件
