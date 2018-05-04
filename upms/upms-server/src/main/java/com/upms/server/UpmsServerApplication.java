@@ -53,7 +53,7 @@ public class UpmsServerApplication extends SpringBootServletInitializer {
 
 		// Set the port number on which we listen for requests.
 		// @param port The new port number
-		connector.setPort(80);
+		connector.setPort(7080);
 
 		// Set the secure connection flag that will be assigned to requests received
 		// through this connector.
@@ -63,7 +63,7 @@ public class UpmsServerApplication extends SpringBootServletInitializer {
 		connector.setSecure(false);
 
 		// redirectPort The redirect port number (non-SSL to SSL)
-		connector.setRedirectPort(443);
+		connector.setRedirectPort(7443);
 		return connector;
 	}
 
