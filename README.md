@@ -118,7 +118,7 @@ npm run dev
 ```bash
      server{
                 listen       80;
-                server_name 111.231.191.63;
+                server_name localhost;
                  root  /home/xxx/workspace/aaron/aaron-static/dist;
                  gzip on;
                  gzip_buffers 32 4k;
@@ -127,8 +127,8 @@ npm run dev
                  gzip_types text/css text/xml application/javascript;
                  gzip_vary on;
  
-                 location /api {
-                           proxy_pass http://localhost:8000/api;
+                 location /api/v1 {
+                           proxy_pass http://localhost:7000/;
                  }
   
                  location / {
