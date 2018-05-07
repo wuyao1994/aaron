@@ -12,6 +12,9 @@ server:
   port: 7000
   session:
     timeout: 1800
+  tomcat:
+    protocol_header: x-forwarded-proto
+  use-forward-headers: true
 dubbo:
   application:
     id: upms-server
@@ -23,3 +26,4 @@ dubbo:
   registry:
     id: upms-registry
     address: zookeeper://zkserver:2181
+
