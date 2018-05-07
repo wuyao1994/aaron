@@ -5,6 +5,7 @@ export default {
   theme: "./theme.config.js",
   publicPath: `/${version}/`,
   outputPath: `./dist/${version}`,
+  devtool: 'inline-source-map',
   // 接口代理示例
   proxy: {
       "/api/v1": {
