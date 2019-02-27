@@ -6,7 +6,7 @@
 [![MIT](https://img.shields.io/dub/l/vibe-d.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
 ## 项目介绍
-Spring Cloud reference application for building an site as microservices 
+Spring Cloud reference application for building an site as microservices  
 演示地址 <https://tainfu.club>
 ## 组织结构 
 
