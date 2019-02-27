@@ -6,7 +6,7 @@
 [![MIT](https://img.shields.io/dub/l/vibe-d.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 
 ## 项目介绍
-基于react + spring boot + dubbo 前后端分离开发系统架构.  
+Spring Cloud reference application for building an site as microservices 
 演示地址 <https://tainfu.club>
 ## 组织结构 
 
@@ -56,6 +56,7 @@ aaron
 | ------------- | ----- |
 | react | [https://reactjs.org/](https://reactjs.org/ "https://reactjs.org/") | 
 | redux | [http://redux.js.org/](http://redux.js.org/ "http://redux.js.org/")
+| dva | [https://github.com/dvajs/dva/](https://github.com/dvajs/dva/ "https://github.com/dvajs/dva/")
 | Ant Design | [https://ant.design/index-cn](https://ant.design/index-cn "https://ant.design/index-cn")|
 
 ### 后端技术：
